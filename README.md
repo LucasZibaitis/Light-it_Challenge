@@ -26,11 +26,11 @@ This application is a Single Page Application (SPA) built with ReactJS and NextJ
 
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/LucasZibaitis/Light-it_Challenge.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd <project-directory>
+    cd patient-management_frontend
     ```
 3. Create a `.env.local` file in the root directory with the following content:
     ```env
