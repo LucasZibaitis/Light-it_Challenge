@@ -2,7 +2,7 @@ import PatientCard from "@/app/components/PatientCard/PatientCard";
 
 export default function PatientsPagination({ currentPatients }) {
   return (
-    <div class="justify-items-center xl:content-start grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 h-full">
+    <div className="w-full justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 h-full">
       {currentPatients.map((patient) => (
         <PatientCard
           key={patient.id}

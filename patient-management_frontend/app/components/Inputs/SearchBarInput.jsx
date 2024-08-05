@@ -7,7 +7,7 @@ export default function SearchBarInput({ searchPatient, setSearchPatient }) {
   };
 
   return (
-    <div class="flex h-full relative">
+    <div class="flex w-64  h-full relative">
       <IoIosSearch
         class={`size-8 absolute bottom-2 left-2 transition-all duration-200  ${
           searchOver ? "text-secondary" : "text-[#9ca3af] "

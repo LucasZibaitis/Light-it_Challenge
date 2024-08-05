@@ -10,26 +10,22 @@ export default function PatientCard({
   const patientData = { id, name, website, description, avatar };
 
   return (
-    <div class="w-96 sm:h-72 shadow-lg bg-white rounded-lg py-8 pl-4 pr-4 flex justify-between">
-      <div class="flex flex-col w-full max-w-72 h-full pr-4">
+    <div className="w-full max-w-sm sm:h-72 shadow-lg bg-white rounded-lg py-8 px-4 flex justify-between">
+      <div className="flex flex-col flex-grow">
         <img
           src={avatar}
           alt={`${name}'s avatar`}
-          class="size-28 sm:size-36 rounded-lg mb-4 border border-2 border-secondary"
+          className="max-w-32 w-full h-32 object-cover rounded-lg mb-4 border border-2 border-secondary"
         />
-        <div class="flex flex-col rounded-lg">
-          <h1 class="text-2xl font-semibold text-secondary break-words">
-            {name}
-          </h1>
-          <h1 class="text-xl font-normal text-secondary">ID: {id}</h1>
-        </div>
+        <h1 className="text-xl font-semibold text-secondary break-words">
+          {name}
+        </h1>
+        <h2 className="text-lg font-normal text-secondary">ID: {id}</h2>
       </div>
-      <div class="flex">
-        <div class="w-0.5 h-full bg-secondary rounded-lg"></div>
-        <div class="flex flex-col items-end justify-between pl-4 h-full">
-          <CardButton type="edit" patientData={patientData} />
-          <CardButton type="detail" patientData={patientData} />
-        </div>
+      <div class="w-0.5 h-full bg-secondary rounded-lg"></div>
+      <div className="flex flex-col justify-between ml-4">
+        <CardButton type="edit" patientData={patientData} />
+        <CardButton type="detail" patientData={patientData} />
       </div>
     </div>
   );

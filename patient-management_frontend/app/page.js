@@ -44,20 +44,26 @@ export default function Home() {
   return (
     <main className="flex flex-col h-screen items-center relative">
       <div
-        class={`h-full w-full flex flex-col items-center justify-start md:justify-around gap-8 py-8 ${
+        class={`h-full w-full flex flex-col items-center justify-start gap-14 py-8 ${
           hasDetailPatientData || addPatient || hasEditPatientData
             ? "opacity-20"
             : "opacity-100"
         } transition-all duration-300`}
       >
-        <div class="w-9/12 flex justify-between md:justify-center gap-4 ">
+        <div class="w-full flex justify-center gap-4">
+          <PaginationButtons
+            currentPage={currentPage}
+            totalPages={totalPages}
+            handleNextPage={handleNextPage}
+            handlePrevPage={handlePrevPage}
+          />
           <SearchBarInput
             searchPatient={searchPatient}
             setSearchPatient={setSearchPatient}
           />
           <AddPatientButton setAddPatient={setAddPatient} />
         </div>
-        <div class="w-9/12 2xl:h-4/6">
+        <div class="w-full 2xl:h-4/6">
           {loadingPatients ? (
             <LoadingAlert />
           ) : filteredPatients.length < 1 ? (
@@ -66,13 +72,6 @@ export default function Home() {
             <PatientsPagination currentPatients={currentPatients} />
           )}
         </div>
-
-        <PaginationButtons
-          currentPage={currentPage}
-          totalPages={totalPages}
-          handleNextPage={handleNextPage}
-          handlePrevPage={handlePrevPage}
-        />
       </div>
       {addPatient && <AddPatientForm setAddPatient={setAddPatient} />}
       {hasDetailPatientData && <PatientDetail />}
